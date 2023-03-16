@@ -1,6 +1,50 @@
-.attribution {
-  font-size: 11px;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+:root {
+
+--red: hsl(0, 78%, 62%);
+--cyan: hsl(180, 62%, 55%);
+--orange: hsl(34, 97%, 64%);
+--blue: hsl(212, 86%, 64%);
+
+--very-dark-blue: hsl(234, 12%, 34%);
+--grayish-blue: hsl(229, 6%, 66%);
+--very-light-gray: hsl(0, 0%, 98%);
+
+--ff-primary: 'Poppins', sans-serif;
+}
+
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  font-family: var(--font-family);
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100svh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--very-dark-blue-main-bg);
+}
+
+footer {
+  position: absolute;
+  bottom: 1rem;
+  font-size: .6875rem;
   text-align: center;
+  width: 100%;
 }
 
 .attribution a {
