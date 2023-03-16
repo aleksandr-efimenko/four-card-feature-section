@@ -16,8 +16,14 @@
   --ff-primary: 'Poppins', sans-serif;
 
   --fs-header-d: 2.25rem;
+  --fs-header-m: 1.5rem;
+
   --lh-header-d: 3.375rem;
+  --lh-header-m: 2.25rem;
+
   --ls-header-d: .0156rem;
+  --ls-header-m: .0106rem;
+
   --fw-header: 275;
   --fw-header-bold: 600;
 
@@ -25,22 +31,14 @@
   --lh-header: var(--lh-header-d);
   --ls-header: var(--ls-header-d);
 
-  --fs-paragraph-d: .9375rem;
-  --lh-paragraph-d: 1.5625rem;
-  --ls-paragraph-d: .0063rem;
+  --fs-paragraph: .9375rem;
+  --lh-paragraph: 1.5625rem;
+  --ls-paragraph: .0063rem;
   --fw-paragraph: 400;
 
-  --fs-paragraph: var(--fs-paragraph-d);
-  --lh-paragraph: var(--lh-paragraph-d);
-  --ls-paragraph: var(--ls-paragraph-d);
-
-
-  --fs-header-secondary-d: 1.25rem;
-  --lh-header-secondary-d: 1.875rem;
+  --fs-header-secondary: 1.25rem;
+  --lh-header-secondary: 1.875rem;
   --fw-header-secondary: 600;
-
-  --fs-header-secondary: var(--fs-heade-secondaryr-d);
-  --lh-header-secondary: var(--lh-header-secondary-d);
 
   --fs-paragraph-secondary-d: .8125rem;
   --lh-paragraph-secondary-d: 1.4375rem;
@@ -113,7 +111,7 @@ header p {
 }
 
 main {
-  margin-block-start: 4rem;
+  margin-block: 4rem;
 }
 
 .cards-container {
@@ -204,7 +202,7 @@ main {
 
 
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 1rem;
   font-size: .6875rem;
   text-align: center;
@@ -216,34 +214,45 @@ footer {
 }
 
 @media (max-width: 50rem) {
+  :root {
+    --fs-header: var(--fs-header-m);
+    --lh-header: var(--lh-header-m);
+    --ls-header: var(--ls-header-m);
+  }
+
+  header {
+    margin-block-start: 85px;
+  }
+
   .cards-container {
     display: grid;
     grid-template-columns: 19.4375rem;
     grid-template-rows: 13.875rem;
     row-gap: 1.5625rem;
   }
+
   .card {
     padding: 1.6875rem 1.6875rem 1.75rem 1.75rem;
   }
 
   .cyan-card {
     grid-column: 1;
-    grid-row: 1 ;
+    grid-row: 1;
   }
-  
+
   .red-card {
-    grid-column:1;
+    grid-column: 1;
     grid-row: 2;
   }
-  
+
   .orange-card {
     grid-column: 1;
     grid-row: 3;
   }
-  
+
   .blue-card {
     grid-column: 1;
     grid-row: 4;
-  
+
   }
 }
