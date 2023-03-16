@@ -1,16 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
 :root {
 
---red: hsl(0, 78%, 62%);
---cyan: hsl(180, 62%, 55%);
---orange: hsl(34, 97%, 64%);
---blue: hsl(212, 86%, 64%);
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
 
---very-dark-blue: hsl(234, 12%, 34%);
---grayish-blue: hsl(229, 6%, 66%);
---very-light-gray: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
 
---ff-primary: 'Poppins', sans-serif;
+  --very-dark-blue: hsl(234, 12%, 34%);
+  --grayish-blue: hsl(229, 6%, 66%);
+  --very-light-gray: hsl(0, 0%, 95%);
+
+  --ff-primary: 'Poppins', sans-serif;
+
+  --fs-header-d: 2.25rem;
+  --lh-header-d: 3.375rem;
+  --ls-header-d: .0156rem;
+  --fw-header: 275;
+  --fw-header-bold: 600;
+
+  --fs-header: var(--fs-header-d);
+  --lh-header: var(--lh-header-d);
+  --ls-header: var(--ls-header-d);
+
+  --fs-paragraph-d: .9375rem;
+  --lh-paragraph-d: 1.5625rem;
+  --ls-paragraph-d: .0063rem;
+  --fw-paragraph: 400;
+
+  --fs-paragraph: var(--fs-paragraph-d);
+  --lh-paragraph: var(--lh-paragraph-d);
+  --ls-paragraph: var(--ls-paragraph-d);
+
+
+  --fs-header-secondary-d: 1.25rem;
+  --lh-header-secondary-d: 1.875rem;
+  --fw-header-secondary: 600;
+
+  --fs-header-secondary: var(--fs-heade-secondaryr-d);
+  --lh-header-secondary: var(--lh-header-secondary-d);
+
+  --fs-paragraph-secondary-d: .8125rem;
+  --lh-paragraph-secondary-d: 1.4375rem;
+  --ls-paragraph-secondary-d: .0056rem;
+
+  --fs-paragraph-secondary: var(--fs-paragraph-secondary-d);
+  --lh-paragraph-secondary: var(--lh-paragraph-secondary-d);
+  --ls-paragraph-secondary: var(--ls-paragraph-secondary-d);
 }
 
 
@@ -26,8 +64,10 @@
   margin: 0;
   padding: 0;
   font: inherit;
-  font-family: var(--font-family);
+  font-family: var(--ff-primary);
 }
+
+
 
 body {
   min-height: 100vh;
@@ -36,8 +76,132 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--very-dark-blue-main-bg);
+  background-color: var(--very-light-gray);
+  flex-direction: column;
+
 }
+
+header {
+  text-align: center;
+  max-width: 33.75rem;
+  margin-inline: 2rem;
+}
+
+h1 {
+  font-size: var(--fs-header);
+  font-weight: var(--fw-header);
+  letter-spacing: var(--ls-header);
+  line-height: var(--lh-header);
+  color: var(--very-dark-blue);
+}
+
+h1.bold-header {
+  font-weight: var(--fw-header-bold);
+}
+
+p {
+  font-size: var(--fs-paragraph);
+  font-weight: var(--fw-paragraph);
+  letter-spacing: var(--ls-paragraph);
+  line-height: var(--lh-paragraph);
+  color: var(--very-dark-blue);
+  opacity: .5;
+}
+
+header p {
+  margin-block-start: 1rem;
+}
+
+main {
+  margin-block-start: 4rem;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 21.875rem);
+  gap: 1.875rem;
+  justify-content: center;
+  align-items: center;
+  grid-auto-flow: column;
+}
+
+.cyan-card {
+  grid-column: 1;
+  grid-row: 1 / 3;
+}
+
+.red-card {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.orange-card {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.blue-card {
+  grid-column: 3;
+  grid-row: 1 / 3;
+
+}
+
+.card {
+  box-shadow: 0px 15px 30px -11px hsla(213, 47%, 67%, 0.5);
+  border-radius: .5rem;
+  background-color: var(--white);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.card h2 {
+  font-size: var(--fs-header-secondary);
+  font-weight: var(--fw-header-secondary);
+  line-height: var(--lh-header-secondary);
+}
+
+.card p {
+  font-size: var(--fs-paragraph-secondary);
+  letter-spacing: var(--ls-paragraph-secondary);
+  line-height: var(--lh-paragraph-secondary);
+  margin-block: .375rem 2.5rem;
+}
+
+.card img {
+  width: 4rem;
+  height: 4rem;
+}
+
+.line {
+  width: 100%;
+  height: .25rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.red-line {
+  background-color: var(--red);
+}
+
+.cyan-line {
+  background-color: var(--cyan);
+}
+
+.orange-line {
+  background-color: var(--orange);
+}
+
+.blue-line {
+  background-color: var(--blue);
+}
+
+.icon-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
 
 footer {
   position: absolute;
@@ -49,4 +213,37 @@ footer {
 
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 50rem) {
+  .cards-container {
+    display: grid;
+    grid-template-columns: 19.4375rem;
+    grid-template-rows: 13.875rem;
+    row-gap: 1.5625rem;
+  }
+  .card {
+    padding: 1.6875rem 1.6875rem 1.75rem 1.75rem;
+  }
+
+  .cyan-card {
+    grid-column: 1;
+    grid-row: 1 ;
+  }
+  
+  .red-card {
+    grid-column:1;
+    grid-row: 2;
+  }
+  
+  .orange-card {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  
+  .blue-card {
+    grid-column: 1;
+    grid-row: 4;
+  
+  }
 }
